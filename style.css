@@ -16,6 +16,7 @@ div#calculadora{
 
 div#buttons{
     padding: 10px;
+    text-align: center;
 }
 
 div#calculos{
@@ -35,6 +36,7 @@ div#calculos p{
 }
 
 button{
+    text-align: center;
     cursor: pointer;
     color: white;
     width: 80px;
@@ -64,6 +66,6 @@ button.op:hover{
         height: 50px;
     }
     div#calculadora{
-        width: 240px;
+        width: 260px;
     }
 }
