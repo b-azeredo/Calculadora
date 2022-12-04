@@ -1,60 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora 2.0</title>
     <link rel="stylesheet" href="style.css">
-    <title>Calculadora</title>
 </head>
 <body>
     <div id="calculadora">
-        <div id="calculos"><p id="calculostexto"></p></div>
-        <div id="buttons">
-            <button onclick="add(7)">7</button> <button onclick="add(8)">8</button> <button onclick="add(9)">9</button> <button class="op" onclick="fnum(), add('*'), operator()">x</button> <br>
-            <button onclick="add(4)">4</button> <button onclick="add(5)">5</button> <button onclick="add(6)">6</button> <button class="op" onclick="fnum(), add('/'), operator()">÷</button> <br>
-            <button onclick="add(1)">1</button> <button onclick="add(2)">2</button> <button onclick="add(3)">3</button> <button class="op" onclick="fnum(), add('+'), operator()">+</button> <br>
-            <button class="op" onclick="limpar()">C</button> <button onclick="add(0)">0</button> <button class="op" onclick="fnum(), add('-'), operator()">-</button> <button class="op" onclick="snum()">=</button>
-        </div>
+        <div id="ot"><p id="output"></p></div>
+        <table>
+            <tr>
+                <td><button onclick="clearOutput()">C</button></td>
+                <td><button onclick="add('+')">+</button></td>
+                <td><button onclick="add('-')">-</button></td>
+                <td><button onclick="add('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="add('7')">7</button></td>
+                <td><button onclick="add('8')">8</button></td>
+                <td><button onclick="add('9')">9</button></td>
+                <td><button onclick="add('/')">÷</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="add('4')">4</button></td>
+                <td><button onclick="add('5')">5</button></td>
+                <td><button onclick="add('6')">6</button></td>
+                <td><button onclick="raizquadrada()">√</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="add('1')">1</button></td>
+                <td><button onclick="add('2')">2</button></td>
+                <td><button onclick="add('3')">3</button></td>
+                <td><button onclick="add('**')">^</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"><button onclick="add(0)">0</button></td>
+                <td><button onclick="calcular()">=</button></td>
+            </tr>
+        </table>
     </div>
-    <script>
-        var firstnum, operator1, secondnum;
-        function limpar(){
-            document.getElementById('calculostexto').textContent = '';
-        }
-        function add(num){
-            if (document.getElementById("calculostexto").textContent.length < 10){
-                document.getElementById("calculostexto").textContent = document.getElementById("calculostexto").textContent + num
-            }
-        }
-        function fnum(){
-            firstnum = document.getElementById("calculostexto").textContent;
-            console.log(firstnum);
-        }
-        function operator(x){
-            operator1 = document.getElementById("calculostexto").textContent;
-            operator1 = operator1.slice(firstnum.length, firstnum.length + 1);
-            console.log(operator1);
-        }
-        function snum(){
-            secondnum = document.getElementById("calculostexto").textContent;
-            secondnum = secondnum.slice(firstnum.length + 1, secondnum.length);
-            console.log(secondnum);
-            if (operator1 == "+"){
-                document.getElementById("calculostexto").textContent = parseInt(firstnum) + parseInt(secondnum);
-            }
-            else if (operator1 == "-"){
-                document.getElementById("calculostexto").textContent = parseInt(firstnum) - parseInt(secondnum);
-            }
-            else if (operator1 == "*"){
-                document.getElementById("calculostexto").textContent = parseInt(firstnum) * parseInt(secondnum);
-            }
-            else if (operator1 == "/"){
-                document.getElementById("calculostexto").textContent = parseInt(firstnum) / parseInt(secondnum);
-            }
-            operator1 = ""
-            
-        }
-    </script>
 </body>
 </html>
+
+<script>
+    function clearOutput(){
+        document.getElementById("output").textContent = "";
+    }
+    function add(num)
+    {
+        document.getElementById("output").innerHTML += num;
+    }
+    function calcular(){
+        document.getElementById("output").textContent = eval(document.getElementById("output").textContent);
+    }
+    function raizquadrada(){
+        console.log(Math.sqrt(parseInt(document.getElementById("output").textContent)))
+        document.getElementById("output").textContent = Math.sqrt(parseInt(document.getElementById("output").textContent))
+    }
+</script>
