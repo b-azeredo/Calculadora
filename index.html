@@ -12,34 +12,34 @@
         <div id="ot"><p id="output"></p></div>
         <table>
             <tr>
-                <td><button onclick="clearOutput()">C</button></td>
-                <td><button onclick="add('**')">^</button></td>
-                <td><button onclick="raizquadrada()">√</button></td>
-                <td><button onclick="add('/')">/</button></td>
+                <td><button onclick="clearOutput()" class="special">C</button></td>
+                <td><button onclick="add('**')" class="special">^</button></td>
+                <td><button onclick="raizquadrada()" class="special">√</button></td>
+                <td><button onclick="add('/')" class="special">/</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('7')">7</button></td>
                 <td><button onclick="add('8')">8</button></td>
                 <td><button onclick="add('9')">9</button></td>
-                <td><button onclick="add('*')">*</button></td>
+                <td><button onclick="add('*')" class="special">*</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('4')">4</button></td>
                 <td><button onclick="add('5')">5</button></td>
                 <td><button onclick="add('6')">6</button></td>
-                <td><button onclick="add('-')">-</button></td>
+                <td><button onclick="add('-')" class="special">-</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('1')">1</button></td>
                 <td><button onclick="add('2')">2</button></td>
                 <td><button onclick="add('3')">3</button></td>
-                <td><button onclick="add('+')">+</button></td>
+                <td><button onclick="add('+')" class="special">+</button></td>
             </tr>
             <tr>
-                <td></td>
+                <td><button onclick="add('.')" class="special">.</button></td>
                 <td><button onclick="add(0)">0</button></td>
-                <td><button onclick="add('.')">.</button></td>
-                <td><button onclick="calcular()">=</button></td>
+                <td></td>
+                <td><button onclick="calcular()" class="special2">=</button></td>
             </tr>
         </table>
     </div>
