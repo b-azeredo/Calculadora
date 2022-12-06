@@ -5,21 +5,10 @@ body{
     align-items: center;
     justify-content: center;
     background-size: 300% 300%;
-    background-image: linear-gradient(
-          -45deg, 
-          black 0%, 
-          rgb(49, 49, 49) 25%, 
-          rgb(86, 86, 86) 51%, 
-          rgb(107, 106, 106) 100%
-    );  
-    animation: AnimateBG 20s ease infinite;
+    background-image: linear-gradient(-45deg, #ee7752, #e73c7e,#23a6d5,#23d5ab);
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
-  
-  @keyframes AnimateBG { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
 
 div#calculadora{
     background-color: rgb(44, 34, 34);

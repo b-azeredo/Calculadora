@@ -13,31 +13,32 @@
         <table>
             <tr>
                 <td><button onclick="clearOutput()">C</button></td>
-                <td><button onclick="add('+')">+</button></td>
-                <td><button onclick="add('-')">-</button></td>
-                <td><button onclick="add('*')">*</button></td>
+                <td><button onclick="add('**')">^</button></td>
+                <td><button onclick="raizquadrada()">√</button></td>
+                <td><button onclick="add('/')">/</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('7')">7</button></td>
                 <td><button onclick="add('8')">8</button></td>
                 <td><button onclick="add('9')">9</button></td>
-                <td><button onclick="add('/')">÷</button></td>
+                <td><button onclick="add('*')">*</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('4')">4</button></td>
                 <td><button onclick="add('5')">5</button></td>
                 <td><button onclick="add('6')">6</button></td>
-                <td><button onclick="raizquadrada()">√</button></td>
+                <td><button onclick="add('-')">-</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('1')">1</button></td>
                 <td><button onclick="add('2')">2</button></td>
                 <td><button onclick="add('3')">3</button></td>
-                <td><button onclick="add('**')">^</button></td>
+                <td><button onclick="add('+')">+</button></td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2"><button onclick="add(0)">0</button></td>
+                <td><button onclick="add(0)">0</button></td>
+                <td><button onclick="add('.')">.</button></td>
                 <td><button onclick="calcular()">=</button></td>
             </tr>
         </table>
@@ -46,18 +47,40 @@
 </html>
 
 <script>
+    let resultado;
     function clearOutput(){
         document.getElementById("output").textContent = "";
     }
     function add(num)
     {
+        if (document.getElementById("output").textContent.length < 10)
+        {
         document.getElementById("output").innerHTML += num;
+        }
     }
     function calcular(){
-        document.getElementById("output").textContent = eval(document.getElementById("output").textContent);
+        resultado = eval(document.getElementById("output").textContent);
+        if (resultado.toString().length > 5)
+        {
+            resultado = resultado.toFixed(8);
+        }
+        else
+        {
+            resultado = resultado.toFixed(2);
+        }
+        document.getElementById("output").textContent = resultado;
     }
     function raizquadrada(){
-        console.log(Math.sqrt(parseInt(document.getElementById("output").textContent)))
-        document.getElementById("output").textContent = Math.sqrt(parseInt(document.getElementById("output").textContent))
+        resultado = Math.sqrt(parseInt(document.getElementById("output").textContent));
+        console.log(resultado.toString.length)
+        if (resultado.toString().length > 5)
+        {
+            resultado = resultado.toFixed(8);
+        }
+        else
+        {
+            resultado = resultado.toFixed(2);
+        }
+        document.getElementById("output").textContent = resultado
     }
 </script>
