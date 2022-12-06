@@ -12,8 +12,8 @@
         <div id="ot"><p id="output"></p></div>
         <table>
             <tr>
-                <td><button onclick="clearOutput()" class="special">C</button></td>
-                <td><button onclick="add('**')" class="special">^</button></td>
+                <td><button onclick="clearOutput()" class="special3">C</button></td>
+                <td><button onclick="clearLastNum()" class="special3">CE</button></td>
                 <td><button onclick="raizquadrada()" class="special">√</button></td>
                 <td><button onclick="add('/')" class="special">/</button></td>
             </tr>
@@ -21,24 +21,24 @@
                 <td><button onclick="add('7')">7</button></td>
                 <td><button onclick="add('8')">8</button></td>
                 <td><button onclick="add('9')">9</button></td>
-                <td><button onclick="add('*')" class="special">*</button></td>
+                <td><button onclick="add('**')" class="special">^</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('4')">4</button></td>
                 <td><button onclick="add('5')">5</button></td>
                 <td><button onclick="add('6')">6</button></td>
-                <td><button onclick="add('-')" class="special">-</button></td>
+                <td><button onclick="add('*')" class="special">*</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('1')">1</button></td>
                 <td><button onclick="add('2')">2</button></td>
                 <td><button onclick="add('3')">3</button></td>
-                <td><button onclick="add('+')" class="special">+</button></td>
+                <td><button onclick="add('-')" class="special">-</button></td>
             </tr>
             <tr>
                 <td><button onclick="add('.')" class="special">.</button></td>
                 <td><button onclick="add(0)">0</button></td>
-                <td></td>
+                <td><button onclick="add('+')" class="special">+</button></td>
                 <td><button onclick="calcular()" class="special2">=</button></td>
             </tr>
         </table>
@@ -53,7 +53,7 @@
     }
     function add(num)
     {
-        if (document.getElementById("output").textContent.length < 10)
+        if (document.getElementById("output").textContent.length < 10);
         {
         document.getElementById("output").innerHTML += num;
         }
@@ -81,6 +81,9 @@
         {
             resultado = resultado.toFixed(2);
         }
-        document.getElementById("output").textContent = resultado
+        document.getElementById("output").textContent = resultado;
+    }
+    function clearLastNum(){
+        
     }
 </script>
